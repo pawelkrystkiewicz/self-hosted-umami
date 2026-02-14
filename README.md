@@ -32,6 +32,8 @@ cp .env.example .env
 2. Point it to this repository (or paste the `docker-compose.yml` contents)
 3. Set the environment variables from step 2
 
+> **Networking:** Docker Compose projects in Dokploy run in an isolated network by default, which means they can't reach databases and other services managed by Dokploy. That's why `docker-compose.yml` explicitly joins `dokploy-network` — the shared network where Dokploy places its managed databases and applications.
+
 ### 4. Add a domain
 
 In the Dokploy project settings, add your domain and set the port to **3000** (the port Umami listens on inside the container). Dokploy's Traefik reverse proxy will handle routing automatically.

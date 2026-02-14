@@ -11,3 +11,9 @@ services:
       DATABASE_URL: ${DATABASE_URL}
       DATABASE_TYPE: postgresql
       APP_SECRET: ${APP_SECRET}
+    networks:
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    external: true
